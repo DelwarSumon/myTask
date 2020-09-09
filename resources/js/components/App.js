@@ -4,15 +4,7 @@ import ReactDOM from 'react-dom';
 function App() {
     return (
         <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Co dfgd mponent</div>
-
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
-            </div>
+            <h2>Hello from the other side</h2>
         </div>
     );
 }
