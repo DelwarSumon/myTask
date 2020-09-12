@@ -1,36 +1,64 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Footer from './layout/Footer';
+import Header from './layout/Header';
+import Button from 'react-bootstrap/Button';
+import { Container } from 'react-bootstrap';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import About from './pages/About';
+
 class App extends Component {
     state = {
-        counter: 0
+        PUBLIC_URL: "/delwar/laravel_react/myTask/",
     }
-
-    incrementCounter = (value) => {
-        //increment counter
-        let counter = this.state.counter + value;
-        this.setState({
-            counter,
-        })
-    }
-
-    decrementCounter = (value) => {
-        //increment counter
-        let counter = this.state.counter - value;
-        this.setState({
-            counter,
-        })
-    }
-     
 
     render() {
         return (
             <div>
-                <div className="container mt-5">
-                    <h2>Count: {this.state.counter}</h2>
-                    <button className="btn btn-success btn-lg" onClick={() => this.incrementCounter(10)}>+</button>
-                    <button className="btn btn-danger btn-lg ml-5" onClick={() => this.decrementCounter(5)}>-</button>
-                </div>
+                <Router>
+                    <Header></Header>
+                    <div>
+                        {/* <nav>
+                            <ul>
+                                <li>
+                                    <Link to={`${this.state.PUBLIC_URL}`}>Home</Link>
+                                </li>
+                                <li>
+                                    <Link to={`${this.state.PUBLIC_URL}about`}>About</Link>
+                                </li>
+                                <li>
+                                    <Link to={`${this.state.PUBLIC_URL}users`}>Users</Link>
+                                </li>
+                            </ul>
+                        </nav> */}
+
+                        <Switch>
+                            <Route path={`${this.state.PUBLIC_URL}about`}>
+                                <About />
+                            </Route>
+                            <Route path={`${this.state.PUBLIC_URL}contact`}>
+                                <Contact />
+                            </Route>
+                            <Route path={`${this.state.PUBLIC_URL}`}>
+                                <Home />
+                            </Route>
+                        </Switch>
+
+                        <Container>
+                            <Footer />
+                        </Container>
+
+                    </div>
+
+                </Router>
             </div>
         );
     }
