@@ -24,38 +24,25 @@ class App extends Component {
         return (
             <div>
                 <Router>
-                    <Header></Header>
+                    <Header />
                     <div>
-                        {/* <nav>
-                            <ul>
-                                <li>
-                                    <Link to={`${this.state.PUBLIC_URL}`}>Home</Link>
-                                </li>
-                                <li>
-                                    <Link to={`${this.state.PUBLIC_URL}about`}>About</Link>
-                                </li>
-                                <li>
-                                    <Link to={`${this.state.PUBLIC_URL}users`}>Users</Link>
-                                </li>
-                            </ul>
-                        </nav> */}
-
-                        <Switch>
-                            <Route path={`${this.state.PUBLIC_URL}about`}>
-                                <About />
-                            </Route>
-                            <Route path={`${this.state.PUBLIC_URL}contact`}>
-                                <Contact />
-                            </Route>
-                            <Route path={`${this.state.PUBLIC_URL}`}>
-                                <Home />
-                            </Route>
-                        </Switch>
-
+                        
                         <Container>
+                            <Switch>
+                                <Route path={`${this.state.PUBLIC_URL}about`}>
+                                    <About />
+                                </Route>
+                                <Route path={`${this.state.PUBLIC_URL}contact`}>
+                                    <Contact />
+                                </Route>
+                                <Route path={`${this.state.PUBLIC_URL}`}>
+                                    <Home />
+                                </Route>
+                            </Switch>
+
                             <Footer />
                         </Container>
-                        
+
 
                     </div>
 
