@@ -85311,8 +85311,8 @@ function Home() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\xampp\htdocs\delwar\laravel_react_project\myTask\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\xampp\htdocs\delwar\laravel_react_project\myTask\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\xampp\htdocs\delwar\laravel_react\myTask\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\xampp\htdocs\delwar\laravel_react\myTask\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
