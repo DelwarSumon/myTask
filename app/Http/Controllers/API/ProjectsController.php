@@ -25,7 +25,7 @@ class ProjectsController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Project List",
-            "date" => $projects
+            "data" => $projects
         ]);
     }
 
@@ -42,13 +42,13 @@ class ProjectsController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Project Detail",
-                "date" => null
+                "data" => null
             ]);
         }else{
             return response()->json([
                 "success" => true,
                 "message" => "Project Detail",
-                "date" => $project
+                "data" => $project
             ]);
         }
     }
@@ -83,7 +83,7 @@ class ProjectsController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Project Created",
-            "date" => $project
+            "data" => $project
         ]);
         
     }
@@ -102,7 +102,7 @@ class ProjectsController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Project Not Found",
-                "date" => null
+                "data" => null
             ]);
         }
 
@@ -128,7 +128,7 @@ class ProjectsController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Project Updated",
-            "date" => $project
+            "data" => $project
         ]);
         
     }
@@ -146,7 +146,7 @@ class ProjectsController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Project Not Found",
-                "date" => null
+                "data" => null
             ]);
         }
 
@@ -154,7 +154,7 @@ class ProjectsController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Project Deleted",
-            "date" => $project
+            "data" => $project
         ]);
         
     }

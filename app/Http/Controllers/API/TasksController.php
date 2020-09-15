@@ -25,7 +25,7 @@ class TasksController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Task List",
-            "date" => $tasks
+            "data" => $tasks
         ]);
     }
 
@@ -42,13 +42,13 @@ class TasksController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Task Detail",
-                "date" => null
+                "data" => null
             ]);
         }else{
             return response()->json([
                 "success" => true,
                 "message" => "Task Detail",
-                "date" => $task
+                "data" => $task
             ]);
         }
     }
@@ -84,7 +84,7 @@ class TasksController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Task Created",
-            "date" => $task
+            "data" => $task
         ]);
         
     }
@@ -103,7 +103,7 @@ class TasksController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Task Not Found",
-                "date" => null
+                "data" => null
             ]);
         }
 
@@ -130,7 +130,7 @@ class TasksController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Task Updated",
-            "date" => $task
+            "data" => $task
         ]);
         
     }
@@ -148,7 +148,7 @@ class TasksController extends Controller
             return response()->json([
                 "success" => false,
                 "message" => "Task Not Found",
-                "date" => null
+                "data" => null
             ]);
         }
 
@@ -156,7 +156,7 @@ class TasksController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Task Deleted",
-            "date" => $task
+            "data" => $task
         ]);
         
     }
