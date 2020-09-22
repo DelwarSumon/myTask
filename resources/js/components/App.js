@@ -15,12 +15,11 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import ProjectList from './pages/projects/ProjectList';
+import ProjectCreate from './pages/projects/ProjectCreate';
+import { PUBLIC_URL } from '../constants';
 
 class App extends Component {
-    state = {
-        PUBLIC_URL: "/delwar/laravel_react/myTask/",
-    }
-
+    
     render() {
         return (
             <div>
@@ -30,16 +29,19 @@ class App extends Component {
                         
                         <Container className="p-4">
                             <Switch>
-                                <Route path={`${this.state.PUBLIC_URL}about`}>
+                                <Route path={`${PUBLIC_URL}about`}>
                                     <About />
                                 </Route>
-                                <Route path={`${this.state.PUBLIC_URL}contact`}>
+                                <Route path={`${PUBLIC_URL}contact`}>
                                     <Contact />
                                 </Route>
-                                <Route path={`${this.state.PUBLIC_URL}projects`}>
+                                <Route path={`${PUBLIC_URL}projects/create`} >
+                                    <ProjectCreate />
+                                </Route>
+                                <Route path={`${PUBLIC_URL}projects`}>
                                     <ProjectList />
                                 </Route>
-                                <Route path={`${this.state.PUBLIC_URL}`}>
+                                <Route path={`${PUBLIC_URL}`}>
                                     <Home />
                                 </Route>
                             </Switch>

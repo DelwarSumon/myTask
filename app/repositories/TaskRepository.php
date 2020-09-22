@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TaskRepository implements CrudInterface{
     public function getAll(){
-        $tasks = Task::all();
+        $tasks = Task::orderBy("id", "desc")->get();
         return $tasks;
     }
     public function findById($id){ 
