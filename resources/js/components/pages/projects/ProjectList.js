@@ -1,6 +1,8 @@
 import Axios from 'axios';
 import React from 'react';
 import { Badge, Button, Card, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { PUBLIC_URL } from '../../../constants';
 
 class ProjectList extends React.Component {
     state = { 
@@ -28,13 +30,14 @@ class ProjectList extends React.Component {
     render() { 
         return ( 
             <>
-
+                
                 <div className="header-part">
                     <div className="float-left">
                         <h2>Project list <Badge variant="primary">{this.state.projectList.length}</Badge></h2>
+
                     </div>
                     <div className="float-right">
-                        <a href="#" className="btn btn-info text-white">+ Create New</a>
+                        <Link to={`${PUBLIC_URL}projects/create`} className="btn btn-info">+Create New</Link>
                     </div>
                     <div className="clearfix"></div>
                 </div>
@@ -48,7 +51,7 @@ class ProjectList extends React.Component {
                     </div>
                 }
                 {this.state.projectList.map((project, index) => (
-                    <Card kew={index} className="mt-3" >
+                    <Card key={index} className="mb-3" >
                         <Card.Header>{project.name} <Badge variant="primary">{project.tasks_count}</Badge> </Card.Header>
                         <Card.Body>
                             <Card.Text>
