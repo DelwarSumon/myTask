@@ -2,39 +2,26 @@ import Axios from 'axios';
 import React from 'react';
 import { Badge, Button, Card, Spinner } from 'react-bootstrap';
 
-class ProjectList extends React.Component {
+class ProjectCreate extends React.Component {
     state = { 
-        projectList : [],
         isLoading : false,
     };
 
     componentDidMount() {
-        this.getProjectLists();
         
     }
 
-    getProjectLists = () => {
-        //call an api and update projects to that
-        this.setState({isLoading:true});
-        Axios.get("http://localhost/delwar/laravel_react/myTask/api/projects").then((res) => {
-            const projectList = res.data.data;
-            this.setState({
-                projectList,
-                isLoading:false,
-            });
-        });
-    }
-
     render() { 
+        console.log("coming render");
         return ( 
             <>
 
                 <div className="header-part">
                     <div className="float-left">
-                        <h2>Project list <Badge variant="primary">{this.state.projectList.length}</Badge></h2>
+                        <h2>Create New Project <Badge variant="primary">{this.state.ProjectCreate.length}</Badge></h2>
                     </div>
                     <div className="float-right">
-                        <a href="#" className="btn btn-info text-white">+ Create New</a>
+                        <a href="#" className="btn btn-info text-white">See All Project</a>
                     </div>
                     <div className="clearfix"></div>
                 </div>
@@ -47,7 +34,7 @@ class ProjectList extends React.Component {
                         </Spinner>
                     </div>
                 }
-                {this.state.projectList.map((project, index) => (
+                {this.state.ProjectCreate.map((project, index) => (
                     <Card kew={index} className="mt-3" >
                         <Card.Header>{project.name} <Badge variant="primary">{project.tasks_count}</Badge> </Card.Header>
                         <Card.Body>
@@ -69,4 +56,4 @@ class ProjectList extends React.Component {
     }
 }
  
-export default ProjectList;
+export default ProjectCreate;

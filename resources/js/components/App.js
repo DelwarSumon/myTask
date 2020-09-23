@@ -15,6 +15,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import ProjectList from './pages/projects/ProjectList';
+import ProjectCreate from './pages/projects/ProjectCreate';
 
 class App extends Component {
     state = {
@@ -38,6 +39,9 @@ class App extends Component {
                                 </Route>
                                 <Route path={`${this.state.PUBLIC_URL}projects`}>
                                     <ProjectList />
+                                </Route>
+                                <Route path={`${this.state.PUBLIC_URL}projects/create`}>
+                                    <ProjectCreate />
                                 </Route>
                                 <Route path={`${this.state.PUBLIC_URL}`}>
                                     <Home />
